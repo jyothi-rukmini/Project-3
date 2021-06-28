@@ -28,14 +28,14 @@ const books = [
 
 const authors = [
     {
-        id : 1,
+        ids : 1,
         name : "Rukmini",
-        books : ["123ge5"],
+        books : ["123ge58gh","123ge58ghio"],
     },
     {
-        id : 2,
-        name : "Jyothi",
-        books : ["123ge5"],
+        ids : 2,
+        name : "jyothi",
+        books : ["123ge58gh"],
     },
 ];
 
@@ -43,10 +43,15 @@ const authors = [
 
 const publications = [
     {
-        id : 1,
+        ids : 1,
         name : "Chakra",
-        books : ["123ge5"],
+        books : ["123ge58ghio"],
     },
+    {
+        ids : 2,
+        name: "Vickie Publications",
+        books: ["123ge58gh"],
+      },
 ];
 
 module.exports = {books,authors,publications};
