@@ -9,6 +9,6 @@ const AuthorSchema = mongoose.Schema({
 });
 
 //Create a book model
-const AuthorModel = mongoose.model(AuthorSchema);
+const AuthorModel = mongoose.model("authors",AuthorSchema);
 
 module.exports = AuthorModel;
