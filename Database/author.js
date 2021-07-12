@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//Creating a book schema
+//Creating a authors schema
 const AuthorSchema = mongoose.Schema({
     ids : Number,
     name : String,
@@ -8,7 +8,7 @@ const AuthorSchema = mongoose.Schema({
     
 });
 
-//Create a book model
+//Create a authors model
 const AuthorModel = mongoose.model("authors",AuthorSchema);
 
 module.exports = AuthorModel;

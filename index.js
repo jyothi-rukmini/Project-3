@@ -1,33 +1,41 @@
+  
 require("dotenv").config();
 
-// Frame work
+//Framework
 const express = require("express");
-const mongoose = require("mongoose");
 
-// Microservices Routes
-const Books = require("./API/Book");
-const Authors = require("./API/Author");
-const Publications = require("./API/Publication");
+//database
+const database = require("./Database/index");
+const mongoose= require("mongoose");
 
-// Initializing express
-const shapeAI = express();
+//models
 
-// Configurations
-shapeAI.use(express.json());
+const BookModel = require("./Database/book");
+const AuthorModel = require("./Database/author");
+const PublicationModel = require("./Database/publication");
 
-// Establish Database connection
-mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  })
-  .then(() => console.log("connection established!!!!!!!"));
+//micro secrvices routes
+const books = require("./API/Book");
+const authors = require("./API/Author");
+const publications = require("./API/Publication");
 
-// Initializing Microservices
-shapeAI.use("/book", Books);
-shapeAI.use("/author", Authors);
-shapeAI.use("/publication", Publications);
+//connect to data base
+mongoose.connect(process.env.MONGO_URL,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+}).then(()=>console.log("MongoDB connection established!!"));
 
-shapeAI.listen(3000, () => console.log("Server running!!😎"));
+//intiallizing express
+ const RJ = express();
+
+//configurations
+ RJ.use(express.json());
+
+ //intializing Microservices
+
+ RJ.use("/book", books);
+ RJ.use("/author", authors);
+ RJ.use("/publication", publications);
+ RJ.listen(3000, ()=> console.log("Server Running!!"));

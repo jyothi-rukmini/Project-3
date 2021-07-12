@@ -1,4 +1,4 @@
-let books = [
+const books = [
     {
         ISBN : "123ge58gh",
         title : "MERN",
@@ -6,8 +6,8 @@ let books = [
         language : "English",
         pubDate : "2021-07-09",
         numOfPage : 225,
-        category : ["fiction","programming","wed dev","tech"],
-        publication : 1,
+        category : ["fiction","programming","web dev","tech"],
+        publications : 1
     },
     {
         ISBN : "123ge58ghio",
@@ -16,9 +16,9 @@ let books = [
         language : "English",
         pubDate : "2021-07-09",
         numOfPage : 225,
-        category : ["fiction","wed dev","tech"],
-        publication : 1,
-    },
+        category : ["fiction","web dev","tech"],
+        publications : 2
+    }
 
 ];
 
@@ -28,14 +28,14 @@ let books = [
 
 const authors = [
     {
-        ids : 1,
+        id : 1,
         name : "Rukmini",
-        books : ["123ge58gh","123ge58ghio"],
+        books : ["123ge58gh","123ge58ghio"]
     },
     {
-        ids : 2,
-        name : "jyothi",
-        books : ["123ge58gh"],
+        id : 2,
+        name : "Jyothi",
+        books : ["123ge58gh"]
     },
 ];
 
@@ -45,13 +45,13 @@ const publications = [
     {
         ids : 1,
         name : "Chakra",
-        books : ["123ge58ghio"],
+        books : ["123ge58ghio"]
     },
     {
         ids : 2,
         name: "Vickie Publications",
-        books: ["123ge58gh"],
-      },
+        books: ["123ge58gh"]
+    }
 ];
 
 module.exports = {books,authors,publications};
